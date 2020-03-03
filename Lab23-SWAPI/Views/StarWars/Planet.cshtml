@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewData["Title"] = "Planet";
+}
+
+@model Planet
+
+<h1>Planet</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <td>@Model.Name</td>
+    </tr>
+    <tr>
+        <th>Rotational Period</th>
+        <td>@Model.Rotation_Period Days</td>
+    </tr>
+    <tr>
+        <th>Orbital Period</th>
+        <td>@Model.Orbital_Period Days</td>
+    </tr>
+    <tr>
+        <th>Climate</th>
+        <td>@Model.Climate</td>
+    </tr>
+    <tr>
+        <th>Population</th>
+        <td>@Model.Population</td>
+    </tr>
+    <tr>
+        <th>Residents</th>
+        <td>
+            @foreach (string p in Model.Residents)
+            {
+            <div>@p</div>
+            }
+        </td>
+    </tr>
+
+
+</table>
+

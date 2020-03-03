@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewData["Title"] = "Person";
+}
+@model People 
+    
+    <!--What a terrible class name...-->
+
+<h1>Person</h1>
+
+ <!--Setup table to display person's stats
+     Handling -->
+
+@Model.Name
+
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <td>@Model.Name</td>
+    </tr>
+    <tr>
+        <th>Height</th>
+        <td>@Model.Height Wipples</td>
+    </tr>
+    <tr>
+        <th>Weight</th>
+        <td>@Model.Mass Jeffersons</td>
+    </tr>
+    <tr>
+        <th>Homeworld</th>
+        <td>@Model.Homeworld</td>
+    </tr>
+    <tr>
+        <th>Favorite Vehicles:</th>
+        <td>
+            @foreach (string v in Model.Vehicles)
+            {
+                <div>@v</div>
+            }
+        </td>
+    </tr>
+    <tr>
+        <th>Appears in:</th>
+        <td>
+            @foreach (string f in Model.Films)
+            {
+                <div>@f</div>
+            }
+        </td>
+    </tr>
+
+</table>
